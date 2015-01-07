@@ -1,3 +1,6 @@
+REMOTE = origin
+USER = master
+
 all : 
 	@echo Sensor Defined Network Solution
 
@@ -6,4 +9,7 @@ commit :
 	@git add .
 	@git commit -m ${UPDATE}
 #	@git remote add origin http://github.com/hellgate13/SensorDefined.git
-	@git push -u origin master
+	@git push -u ${REMOTE} ${USER}
+
+remote :	
+	@git remote add ${REMOTE} http://github.com/hellgate13/SensorDefined.git
