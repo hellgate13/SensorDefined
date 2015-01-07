@@ -6,7 +6,7 @@ all :
 
 commit :
 	@git init
-	@git add .
+	@git add --all .
 	@git commit -m ${UPDATE}
 #	@git remote add origin http://github.com/hellgate13/SensorDefined.git
 	@git push -u ${REMOTE} ${USER}
