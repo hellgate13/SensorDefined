@@ -1,1 +1,2 @@
-socket.o: socket.c socket.h lib.h
+sensor.o: sensor.c sensor.h lib.h define.h
+socket.o: socket.c socket.h lib.h define.h sensor.h

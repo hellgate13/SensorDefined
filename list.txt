@@ -1,2 +1,8 @@
-2015.1.7
+2015.01.07
 + start
++ create makefile 
+
+2015.01.08
++ sensor-reg-defined
+
+

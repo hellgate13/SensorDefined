@@ -30,3 +30,8 @@ dep :
 	@cd ./${SRCDIR} && make $@
 	@cd ./${LIBDIR} && make $@
 	@echo DONE.	
+
+run :
+	@echo PROGRAME START 
+	@cd ./${BINDIR} && ./*.run
+	@echo DONE.
