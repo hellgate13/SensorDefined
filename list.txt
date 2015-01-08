@@ -4,5 +4,5 @@
 
 2015.01.08
 + sensor-reg-defined
-
++ sensor-on/off-defined
 

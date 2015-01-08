@@ -7,23 +7,51 @@ int main()
 	int _state = 0x00;
 	int menu = 0x00;
 	int inx = 0x00;
-	int input[COUNT] = {0,0};
+	int reg[COUNT] = {0x00,0x00};
+	char input[0x10] = {'0'};
+	int cmp = 0x00;
+	
 	//print VERSION
 	#ifdef VERSION
 	printf(VERSION);
 	#endif
 	
-menu:
 	printf("Define Sensor ON/OFF\n");
-	for (inx = 0x00; inx < COUNT; inx++)
+	for_start:
+	printf("Select %s SENSOR ON?    ON-1 OFF-0  ", sensor_string[inx]);
+	scanf("%s",input);
+
+	if (inx == 0) 
 	{ 
-		printf("Select %s SENSOR ON?    ON-1 OFF-0  ",sensor_string[inx]);
-		scanf("%d",&input[inx]);
+		inx++;
+		if(strcmp(input,"0") != 0 AND strcmp(input,"1") != 0)
+		{
+			inx--;
+		}
+		
+		if(strcmp(input,"0") == 0) reg[inx-1] = 0;
+		else if(strcmp(input,"1") == 0) reg[inx-1] = 1;
+		goto for_start;
 	}
+	else
+	{
+		if(strcmp(input,"0") != 0 AND strcmp(input,"1") != 0)
+		{
+			goto for_start;
+		} 
+			
+		if(strcmp(input,"0") == 0) reg[inx] = 0;
+		else if(strcmp(input,"1") == 0) reg[inx] = 1;
+		
+		goto for_end;
+	}
+
+	for_end:
 	printf("\n");
 		
-	state = (input[1] << TEM) + (input[0] << WET);
-
+	state = (reg[1] << TEM) + (reg[0] << WET);
+	printf("%d\n",state);
+	printf("reg[1] : %d reg[1] << TEM: %d reg[0] : %d reg[0] << WET %d\n",reg[1],reg[1] << TEM ,reg[0],reg[0] << WET);
 	// call SENSOR
 	_state = sensor_main(state);
 	

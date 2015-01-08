@@ -14,9 +14,10 @@ print:
 binary:
 	while(true)
 	{
-		if(inx < 0) break;
-		bit = (state & (1 << inx))?1:0;
-		if(bit == 1)
+		if(inx < 0x00) break;
+		bit = (state & (0x1 << inx))?1:0;
+		
+		if(bit == 0x1)
 		{
 			printf("%d",bit);
 		}
@@ -24,6 +25,7 @@ binary:
 		{
 			printf("%d",bit);
 		}	
+		
 		inx--;
 	}
 	printf("\n");
@@ -31,6 +33,7 @@ binary:
 
 func_end_E:
 	return -1;
+
 func_end_NE:
-	return 0;
+	return 0x0;
 }

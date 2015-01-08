@@ -21,4 +21,8 @@
 #define true 1
 #define false 0
 
+// AND OR
+#define OR ||
+#define AND &&
+
 #endif
