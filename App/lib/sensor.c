@@ -1,4 +1,5 @@
 #include "sensor.h"
+#include "sensor_func.h"
 
 int sensor_main(int state)
 {
