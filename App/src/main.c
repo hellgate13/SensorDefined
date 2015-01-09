@@ -50,8 +50,7 @@ int main()
 	printf("\n");
 		
 	state = (reg[1] << TEM) + (reg[0] << WET);
-	printf("%d\n",state);
-	printf("reg[1] : %d reg[1] << TEM: %d reg[0] : %d reg[0] << WET %d\n",reg[1],reg[1] << TEM ,reg[0],reg[0] << WET);
+	
 	// call SENSOR
 	_state = sensor_main(state);
 	

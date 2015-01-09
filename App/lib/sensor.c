@@ -5,12 +5,17 @@ int sensor_main(int state)
 {
 int inx = 3;
 int bit;
-
+//#define DEBUG
+#ifdef DEBUG
 goto binary;
+#endif
 
-print:
-	printf("%2d \n",state);
-	goto func_end_NE;
+sensor_setting_load("temp");
+
+printf("Setting load Complete\n");
+printf("TAG index : %lf \n",info.tag_inx);
+printf("TAG nic : %s \n",info.tag_nic);
+goto func_end_NE;
 
 binary:
 	while(true)

@@ -3,7 +3,7 @@ OBJS = *.o
 VER = ALPHA.5.2.0
 CC = gcc
 DEP_FILE = dep_file
-CLEAN_OPTION = 
+CLEAN_OPTION = *.o 
 
 version : 
 	@echo this Makefile is ${VER}

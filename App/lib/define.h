@@ -25,4 +25,7 @@
 #define OR ||
 #define AND &&
 
+//virtualization
+#define VIRTUAL
+
 #endif

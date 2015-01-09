@@ -1,2 +1,3 @@
-sensor.o: sensor.c sensor.h lib.h define.h sensor_func.h tem.h
+sensor.o: sensor.c sensor.h lib.h define.h sensor_func.h tem.h wet.h
 socket.o: socket.c socket.h lib.h define.h sensor.h
+tem.o: tem.c tem.h sensor_func.h wet.h define.h
